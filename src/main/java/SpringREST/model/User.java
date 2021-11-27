@@ -61,6 +61,14 @@ public class User implements UserDetails {
         this.password = password;
     }
 
+    public User(String firstName, String lastName, byte age, String username, String password, Set<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;
