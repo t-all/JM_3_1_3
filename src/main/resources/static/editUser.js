@@ -22,7 +22,7 @@ function editUser() {
         method: 'PUT',
         body: JSON.stringify({
             id: window.formEditUser.editID.value,
-            firstname: window.formEditUser.editFistName.value,
+            firstName: window.formEditUser.editFirstName.value,
             lastName: window.formEditUser.editLastName.value,
             age: window.formEditUser.editAge.value,
             username: window.formEditUser.editUsername.value,
@@ -39,8 +39,8 @@ function editUser() {
                 '<td>' + window.formEditUser.editAge.value + '</td>' +
                 '<td>' + window.formEditUser.editUsername.value + '</td>' +
                 '<td>' + rolesList.textContent + '</td>' +
-                '<td> <button type="button" onclick="getModalEdit(' + id + ')" class="btn btn-primary btn-sm">Edit</button> </td>' +
-                '<td> <button type="button" onclick="getModalDelete(' + id + ')" class="btn btn-danger btn-sm">Delete</button> </td>' +
+                '<td> <button type="button" onclick="getModalEdit(' + id + ')" class="btn btn-info">Edit</button> </td>' +
+                '<td> <button type="button" onclick="getModalDelete(' + id + ')" class="btn btn-danger">Delete</button> </td>' +
                 '</tr>');
         });
 }

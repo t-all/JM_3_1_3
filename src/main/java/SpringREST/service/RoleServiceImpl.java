@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -20,8 +22,8 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void addRole(Role role) {
-        roleRepository.save(role);
+    public void addRole(Set<Role> role) {
+        roleRepository.saveAll(role);
     }
 
     @Override
@@ -35,8 +37,11 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> getAllRoles() {
-        return roleRepository.findAll();
+    public Set<Role> getAllRoles() {
+        Iterable<Role>  iterable = roleRepository.findAll();
+        Set<Role> set = new HashSet<>();
+        iterable.forEach(role -> set.add(role));
+        return set;
     }
 
     @Override

@@ -8,10 +8,10 @@ function getModalEdit(id) {
             let userSelect = "";
 
             for (let i = 0; i < user.roles.length; i++) {
-                if (user.roles[i].roleName == "ROLE_ADMIN") {
+                if (user.roles[i].role == "ROLE_ADMIN") {
                     adminSelect = "selected";
                 }
-                if (user.roles[i].roleName == "ROLE_USER") {
+                if (user.roles[i].role == "ROLE_USER") {
                     userSelect = "selected";
                 }
             }
@@ -28,7 +28,7 @@ function getModalEdit(id) {
                 '            <div class="modal-header">' +
                 '                <h5 class="modal-title" id="TitleModalLabel">Edit user</h5>' +
                 '                <button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-                '                    <span aria-hidden="true">&times;</span>' +
+                '                    <span aria-hidden="true">x</span>' +
                 '                </button>' +
                 '            </div>' +
                 '            <div class="modal-body bg-white">' +
@@ -42,7 +42,7 @@ function getModalEdit(id) {
                 '                    <p>' +
                 '                        <label>First name</label>' +
                 '                        <input class="form-control form-control-sm" type="text"' +
-                '                               id="editName" value="' + user.firstname + '"' +
+                '                               id="editFirstName" value="' + user.firstName + '"' +
                 '                               placeholder="First name" required>' +
                 '                    </p>' +
                 '                    <p>' +
@@ -59,8 +59,8 @@ function getModalEdit(id) {
                 '                    </p>' +
                 '                    <p>' +
                 '                        <label>Email</label>' +
-                '                        <input class="form-control form-control-sm" type="email"' +
-                '                               id="editEmail" value="' + user.username + '"' +
+                '                        <input class="form-control form-control-sm" type="text"' +
+                '                               id="editUsername" value="' + user.username + '"' +
                 '                               placeholder="Email" required>' +
                 '                    </p>' +
                 '                    <p>' +
@@ -72,8 +72,8 @@ function getModalEdit(id) {
                 '                        <label>Role</label>' +
                 '                        <select id="editRoles" name="roles" multiple size="2" required ' +
                 '                               class="form-control form-control-sm">' +
-                '                            <option value="ADMIN"' + adminSelect + '>ADMIN</option>' +
-                '                            <option value="USER"' + userSelect + '>USER</option>' +
+                '                            <option value="ROLE_ADMIN"' + adminSelect + '>ROLE_ADMIN</option>' +
+                '                            <option value="ROLE_USER"' + userSelect + '>ROLE_USER</option>' +
                 '                        </select>' +
                 '                    </p>' +
                 '                </form>' +

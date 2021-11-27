@@ -17,7 +17,6 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
     public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
@@ -36,7 +35,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(User user) {
-        if (!user.getPassword().equals(getUser(user.getId()).getPassword())) {
+        if (user.getPassword().isEmpty()) {
+            user.setPassword(userRepository.getByUsername(user.getUsername()).getPassword());
+        } else {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
         }
         userRepository.save(user);

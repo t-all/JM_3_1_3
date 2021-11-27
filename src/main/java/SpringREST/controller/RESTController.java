@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 public class RESTController {
@@ -40,17 +42,17 @@ public class RESTController {
     }
 
     @GetMapping("/getAllRoles")
-    public ResponseEntity<List<Role>> getAllRoles() {
+    public ResponseEntity<Set<Role>> getAllRoles() {
         return ResponseEntity.ok().body(roleService.getAllRoles());
     }
 
     @GetMapping("/getUserById/{id}")
-    public ResponseEntity<Optional<User>> getUserById(@PathVariable Long id) {
+    public ResponseEntity<Optional<User>> getUserById(@PathVariable("id") Long id) {
         return ResponseEntity.ok().body(userService.getUserById(id));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         userService.addUser(user);
         return ResponseEntity.ok().body(user);
     }

@@ -24,11 +24,11 @@ function showAllUsers() {
 
                 var cell6 = row.insertCell();
                 cell6.innerHTML =
-                    '<button type="button" onclick="getModalEdit(' + user.id + ')" class="btn btn-primary btn-sm">Edit</button>';
+                    '<button type="button" onclick="getModalEdit(' + user.id + ')" class="btn btn-info">Edit</button>';
 
                 var cell7 = row.insertCell();
                 cell7.innerHTML =
-                    '<button type="button" onclick="getModalDelete(' + user.id + ')" class="btn btn-danger btn-sm">Delete</button>';
+                    '<button type="button" onclick="getModalDelete(' + user.id + ')" class="btn btn-danger">Delete</button>';
             })
         });
 }

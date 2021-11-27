@@ -61,14 +61,6 @@ public class User implements UserDetails {
         this.password = password;
     }
 
-    public User(String firstName, String lastName, byte age, String username, String password, Set<Role> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-    }
 
     public Long getId() {
         return id;
@@ -124,10 +116,18 @@ public class User implements UserDetails {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+//    public void setRoles(Set<Role> roles) {
+//        this.roles = roles;
+//    }
+public void setRoles(String roles) {
+    this.roles = new HashSet<>();
+    if (roles.contains("ROLE_ADMIN")) {
+        this.roles.add(new Role("ROLE_ADMIN"));
     }
-
+    if (roles.contains("ROLE_USER")) {
+        this.roles.add(new Role("ROLE_USER"));
+    }
+}
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;

@@ -8,10 +8,10 @@ function getModalDelete(id) {
             let userSelect = "";
 
             for (let i = 0; i < user.roles.length; i++) {
-                if (user.roles[i].roleName == "ROLE_ADMIN") {
+                if (user.roles[i].role == "ROLE_ADMIN") {
                     adminSelect = "selected";
                 }
-                if (user.roles[i].roleName == "ROLE_USER") {
+                if (user.roles[i].roles == "ROLE_USER") {
                     userSelect = "selected";
                 }
             }
@@ -42,7 +42,7 @@ function getModalDelete(id) {
                 '                    <p>' +
                 '                        <label>First name</label>' +
                 '                        <input class="form-control form-control-sm" type="text"' +
-                '                               value="' + user.firstname + '" readonly>' +
+                '                               value="' + user.firstName + '" readonly>' +
                 '                    </p>' +
                 '                    <p>' +
                 '                        <label>Last name</label>' +
@@ -56,14 +56,14 @@ function getModalDelete(id) {
                 '                    </p>' +
                 '                    <p>' +
                 '                        <label>Email</label>' +
-                '                        <input class="form-control form-control-sm" type="email"' +
+                '                        <input class="form-control form-control-sm" type="text"' +
                 '                               value="' + user.username + '" readonly>' +
                 '                    </p>' +
                 '                    <p>' +
                 '                        <label>Role</label>' +
                 '                        <select class="form-control form-control-sm" multiple size="2" readonly>' +
-                '                            <option value="ADMIN"' + adminSelect + ' >ADMIN</option>' +
-                '                            <option value="USER"' + userSelect + '>USER</option>' +
+                '                            <option value="ROLE_ADMIN"' + adminSelect + ' >ROLE_ADMIN</option>' +
+                '                            <option value="ROLE_USER"' + userSelect + '>ROLE_USER</option>' +
                 '                        </select>' +
                 '                    </p>' +
                 '                </form>' +
