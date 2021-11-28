@@ -1,6 +1,6 @@
-showAllUsers();
+allUsers();
 
-function showAllUsers() {
+function allUsers() {
     let tBody = document.getElementById("tBody");
     tBody.innerHTML = "";
     fetch('http://localhost:8080/getAllUsers')
@@ -20,15 +20,15 @@ function showAllUsers() {
                 var cell4 = row.insertCell();
                 cell4.innerHTML = user.username;
                 var cell5 = row.insertCell();
-                cell5.innerHTML = listRoles(user).textContent;
+                cell5.innerHTML = allRoles(user).textContent;
 
                 var cell6 = row.insertCell();
                 cell6.innerHTML =
-                    '<button type="button" onclick="getModalEdit(' + user.id + ')" class="btn btn-info">Edit</button>';
+                    '<button type="button" onclick="modalEdit(' + user.id + ')" class="btn btn-info">Edit</button>';
 
                 var cell7 = row.insertCell();
                 cell7.innerHTML =
-                    '<button type="button" onclick="getModalDelete(' + user.id + ')" class="btn btn-danger">Delete</button>';
+                    '<button type="button" onclick="modalDelete(' + user.id + ')" class="btn btn-danger">Delete</button>';
             })
         });
 }

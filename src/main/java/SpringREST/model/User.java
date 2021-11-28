@@ -38,7 +38,7 @@ public class User implements UserDetails {
     @Column(name = "age")
     private byte age;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String username;
 
     @Column(name = "password")

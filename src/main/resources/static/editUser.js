@@ -39,8 +39,8 @@ function editUser() {
                 '<td>' + window.formEditUser.editAge.value + '</td>' +
                 '<td>' + window.formEditUser.editUsername.value + '</td>' +
                 '<td>' + rolesList.textContent + '</td>' +
-                '<td> <button type="button" onclick="getModalEdit(' + id + ')" class="btn btn-info">Edit</button> </td>' +
-                '<td> <button type="button" onclick="getModalDelete(' + id + ')" class="btn btn-danger">Delete</button> </td>' +
+                '<td> <button type="button" onclick="modalEdit(' + id + ')" class="btn btn-info">Edit</button> </td>' +
+                '<td> <button type="button" onclick="modalDelete(' + id + ')" class="btn btn-danger">Delete</button> </td>' +
                 '</tr>');
         });
 }

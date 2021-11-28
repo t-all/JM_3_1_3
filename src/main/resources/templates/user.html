@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 
     <meta charset="UTF-8">
@@ -56,17 +56,7 @@
                             <th scope="col">Role</th>
                         </tr>
                         </thead>
-                        <tbody id="user_info"></tbody>
-<!--                        <tbody>-->
-<!--                        <tr class="table-secondary">-->
-<!--                            <td th:text="${user.id}">ID</td>-->
-<!--                            <td th:text="${user.firstName}">FIRST_NAME</td>-->
-<!--                            <td th:text="${user.lastName}">LAST_NAME</td>-->
-<!--                            <td th:text="${user.age}">AGE</td>-->
-<!--                            <td th:text="${user.username}">EMAIL</td>-->
-<!--                            <td th:text="${user.roles}">ROLE</td>-->
-<!--                        </tr>-->
-<!--                        </tbody>-->
+                        <tbody id="userInfo"></tbody>
                     </table>
                 </div>
             </div>
@@ -82,8 +72,8 @@
         crossorigin="anonymous"></script>
 
 
-<script src="/showHeader.js"></script>
-<script src="/listRoles.js"></script>
-<script src="/showUserInfo.js"></script>
+<script src="/header.js"></script>
+<script src="/allRoles.js"></script>
+<script src="/userInfo.js"></script>
 </body>
 </html>

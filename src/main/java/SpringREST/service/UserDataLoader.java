@@ -2,7 +2,6 @@ package SpringREST.service;
 
 import SpringREST.model.Role;
 import SpringREST.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

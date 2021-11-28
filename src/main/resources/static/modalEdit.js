@@ -1,4 +1,4 @@
-function getModalEdit(id) {
+function modalEdit(id) {
 
     fetch('http://localhost:8080/getUserById/' + id)
         .then(response => response.json())

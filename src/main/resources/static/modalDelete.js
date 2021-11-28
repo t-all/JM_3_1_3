@@ -1,4 +1,4 @@
-function getModalDelete(id) {
+function modalDelete(id) {
 
     fetch('http://localhost:8080/getUserById/' + id)
         .then(response => response.json())

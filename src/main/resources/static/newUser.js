@@ -35,16 +35,16 @@ function newUser() {
                 '<td>' + window.formNewUser.newAge.value + '</td>' +
                 '<td>' + window.formNewUser.newUsername.value + '</td>' +
                 '<td>' + rolesList.textContent + '</td>' +
-                '<td> <button type="button" onclick="getModalEdit(' + user.id + ')" class="btn btn-info">Edit</button> </td>' +
-                '<td> <button type="button" onclick="getModalDelete(' + user.id + ')" class="btn btn-danger">Delete</button> </td>' +
+                '<td> <button type="button" onclick="modalEdit(' + user.id + ')" class="btn btn-info">Edit</button> </td>' +
+                '<td> <button type="button" onclick="modalDelete(' + user.id + ')" class="btn btn-danger">Delete</button> </td>' +
                 '</tr>');
 
-            window.formNewUser.newFirstName.value = "";
-            window.formNewUser.newLastName.value = "";
-            window.formNewUser.newAge.value = "";
-            window.formNewUser.newUsername.value = "";
-            window.formNewUser.newPassword.value = "";
-            window.formNewUser.newRoles.value = "";
+            // window.formNewUser.newFirstName.value = "";
+            // window.formNewUser.newLastName.value = "";
+            // window.formNewUser.newAge.value = "";
+            // window.formNewUser.newUsername.value = "";
+            // window.formNewUser.newPassword.value = "";
+            // window.formNewUser.newRoles.value = "";
 
             $('#NewUserCreated').modal();
         });
